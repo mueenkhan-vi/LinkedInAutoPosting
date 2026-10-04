@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  linkedin-automation:
+    build: .
+    container_name: linkedin-bot
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+      - ./generated_posts:/app/generated_posts
+      - ./.encryption.key:/app/.encryption.key:ro
+    restart: unless-stopped
+    # Uncomment for scheduled runs
+    # command: python linkedin_scheduler.py
+
+  # Optional: Add a scheduler service
+  # scheduler:
+  #   build: .
+  #   container_name: linkedin-scheduler
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - ./logs:/app/logs
+  #     - ./generated_posts:/app/generated_posts
+  #     - ./.encryption.key:/app/.encryption.key:ro
+  #   command: python linkedin_scheduler.py
+  #   restart: unless-stopped

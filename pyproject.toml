@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+tool.setuptools.packages = ["config", "services", "utils", "agents"]
+tool.setuptools.py-modules = [
+    "main",
+    "main_simple",
+    "linkedin_api_poster",
+    "linkedin_oauth_handler",
+    "linkedin_personal_bot",
+    "linkedin_scheduler",
+    "crew_manager",
+    "encrypt_credentials",
+    "test_ultra_minimal"
+]
+tool.setuptools.include-package-data = true
+
+tool.setuptools.package-data = {"" = ["README.md", "requirements.txt", ".env.example", "Dockerfile", "docker-compose.yml"]}
+
+[project]
+name = "linkedin-agent"
+version = "0.1.0"
+description = "AI-powered LinkedIn content generator and poster using OpenAI and LinkedIn API."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name = "LinkedIn Crew AI", email = "support@example.com"}]
+license = {text = "MIT"}
+keywords = ["linkedin", "automation", "openai", "ai", "poster", "social media"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "openai==1.52.0",
+    "python-dotenv==1.0.0",
+    "requests==2.31.0",
+    "linkedin-api==2.0.0",
+    "pydantic>=2.5.0",
+    "cryptography==41.0.7",
+    "typing_extensions>=4.0",
+    "anyio<5,>=3.5.0",
+    "distro<2,>=1.7.0",
+    "httpx==0.27.0",
+    "jiter<1,>=0.4.0",
+    "sniffio",
+    "tqdm>4",
+    "annotated-types"
+]
+urls = {"Homepage" = "https://example.com", "Source" = "https://github.com/your/repo"}
+
+[project.scripts]
+"linkedin-agent" = "main:main"
+"linkedin-api-poster" = "linkedin_api_poster:main"
+"linkedin-oauth-handler" = "linkedin_oauth_handler:main"
+"linkedin-scheduler" = "linkedin_scheduler:main"
+"linkedin-personal-bot" = "linkedin_personal_bot:main"
+"linkedin-test-minimal" = "test_ultra_minimal:main"

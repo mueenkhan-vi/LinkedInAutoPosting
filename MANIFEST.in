@@ -1,0 +1,10 @@
+include README.md
+include requirements.txt
+include .env.example
+include Dockerfile
+include docker-compose.yml
+include .github/**
+recursive-include config *.py
+recursive-include services *.py
+recursive-include utils *.py
+recursive-include agents *.py

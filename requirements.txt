@@ -1,0 +1,21 @@
+# LinkedIn Content Generator - Working Dependencies
+# Python 3.13 Required
+# Last verified: May 2, 2026
+
+# Core dependencies (without crewai - using direct OpenAI API instead)
+openai==1.52.0
+python-dotenv==1.0.0
+requests==2.31.0
+linkedin-api==2.0.0
+pydantic>=2.5.0
+cryptography==41.0.7
+
+# OpenAI dependencies
+typing_extensions>=4.0
+anyio<5,>=3.5.0
+distro<2,>=1.7.0
+httpx==0.27.0
+jiter<1,>=0.4.0
+sniffio
+tqdm>4
+annotated-types
